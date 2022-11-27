@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f2efd3b6-7638-4778-85ad-32d3c0e6bc6e}">
+		<property name="assetPath">
+			<value>Music Stems/WizardLead.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>13.681315192743764</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e4e9453c-602c-42c7-b5be-667132d2bc59}</destination>
+		</relationship>
+	</object>
+</objects>

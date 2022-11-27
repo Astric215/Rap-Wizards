@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a5a932c5-5ee6-47e4-967e-9f30cbd3f86f}">
+		<property name="assetPath">
+			<value>Music Stems/RapLeadAlt.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>24.697800453514738</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e4e9453c-602c-42c7-b5be-667132d2bc59}</destination>
+		</relationship>
+	</object>
+</objects>
