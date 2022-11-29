@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8080aa82ab85f459ff733d586d06b1, type: 3}
-  m_Name: Robes
+  m_Script: {fileID: 11500000, guid: 5fe59891b2ba1d5468ac20c3240c581e, type: 3}
+  m_Name: White Mage
   m_EditorClassIdentifier: 
-  word: Robes
-  damageType: 1
-  damageLevel: 1
-  rhyme: 1
-  text: 
+  charName: White Mage
+  stunned: 0
+  artwork: {fileID: 0}
+  speed: 2
+  dmgToStun: 50
+  weakness: 1
+  deck:
+  - {fileID: 11400000, guid: ea9bc38338c0c394a88c9900c4745fa7, type: 2}
