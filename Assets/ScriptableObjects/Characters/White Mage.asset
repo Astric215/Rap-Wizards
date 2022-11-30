@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charName: White Mage
   stunned: 0
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 45b11d3e2c7f0d94fa01bb014f1bf6d3, type: 3}
   speed: 2
   dmgToStun: 50
   weakness: 1

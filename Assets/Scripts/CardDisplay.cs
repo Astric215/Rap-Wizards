@@ -26,22 +26,22 @@ public class CardDisplay : MonoBehaviour
         switch (card.damageType)
         {
             case 1:
-                sr.sprite = Resources.Load<Sprite>("Sprites/Card_Fire");
+                sr.sprite = Resources.Load<Sprite>("Sprites/Cards/Card_Fire");
                 break;
             case 2:
-                sr.sprite = Resources.Load<Sprite>("Sprites/Card_Ice");
+                sr.sprite = Resources.Load<Sprite>("Sprites/Cards/Card_Ice");
                 break;
             case 3:
-                sr.sprite = Resources.Load<Sprite>("Sprites/Card_Protect");
+                sr.sprite = Resources.Load<Sprite>("Sprites/Cards/Card_Protect");
                 break;
             case 4:
-                sr.sprite = Resources.Load<Sprite>("Sprites/Card_Shock");
+                sr.sprite = Resources.Load<Sprite>("Sprites/Cards/Card_Shock");
                 break;
             case 5:
-                sr.sprite = Resources.Load<Sprite>("Sprites/Card_Toxic");
+                sr.sprite = Resources.Load<Sprite>("Sprites/Cards/Card_Toxic");
                 break;
             default:
-                sr.sprite = Resources.Load<Sprite>("Sprites/Card_Neutral");
+                sr.sprite = Resources.Load<Sprite>("Sprites/Cards/Card_Neutral");
                 break;
         }
 
