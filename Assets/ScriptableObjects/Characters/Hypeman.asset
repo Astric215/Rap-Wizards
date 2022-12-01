@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charName: Hypeman
   stunned: 0
-  artwork: {fileID: 21300000, guid: 862b555f87a39ab42b348f44b10f07be, type: 3}
+  artwork: {fileID: 21300000, guid: d66e1f91bdf410145b85be0a09281c4b, type: 3}
   speed: 2
   dmgToStun: 50
   weakness: 1
