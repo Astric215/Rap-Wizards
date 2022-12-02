@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3811986020198827415}
   - component: {fileID: 4822955661798595818}
   - component: {fileID: 5392193275854394856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 164dd117307b53a4d925568cb247d98d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3811986020757666224}
   - component: {fileID: 3811986020757666226}
   - component: {fileID: 3811986020757666225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3811986020757666225
 MonoBehaviour:
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 3811986020810856767}
   - component: {fileID: 3811986020810856753}
   - component: {fileID: 3811986020810856752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Word
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3811986020810856752
 MonoBehaviour:
