@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8080aa82ab85f459ff733d586d06b1, type: 3}
   m_Name: Swell
   m_EditorClassIdentifier: 
-  word: Robes
+  word: Swell
   background: {fileID: 21300000, guid: 404a69d9cd300b54789939d1ce9ac411, type: 3}
   damageType: 3
   damageLevel: 1
   rhyme: 8
-  text: Compliment your teamates.
+  text: "We\u2019re only just getting started, our power is set to swell"

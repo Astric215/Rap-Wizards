@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce8080aa82ab85f459ff733d586d06b1, type: 3}
-  m_Name: Globe
+  m_Name: Effect
   m_EditorClassIdentifier: 
-  word: Globe
-  background: {fileID: 21300000, guid: 45b11d3e2c7f0d94fa01bb014f1bf6d3, type: 3}
-  damageType: 2
+  word: Effect
+  background: {fileID: 21300000, guid: 404a69d9cd300b54789939d1ce9ac411, type: 3}
+  damageType: 4
   damageLevel: 1
-  rhyme: 1
-  text: "No one knows who you are, and I\u2019m known across the globe."
+  rhyme: 5
+  text: None of your spells are having the desired effects
