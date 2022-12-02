@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4822955661798595818}
   - component: {fileID: 5392193275854394856}
   m_Layer: 0
-  m_Name: NeutralCard
+  m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,6 @@ MonoBehaviour:
   card: {fileID: 0}
   wordText: {fileID: 3811986020810856752}
   descriptionText: {fileID: 3811986020757666225}
-  typeSprite: {fileID: 0}
 --- !u!212 &5392193275854394856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,7 +113,7 @@ GameObject:
   - component: {fileID: 3811986020757666224}
   - component: {fileID: 3811986020757666226}
   - component: {fileID: 3811986020757666225}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +285,7 @@ GameObject:
   - component: {fileID: 3811986020810856767}
   - component: {fileID: 3811986020810856753}
   - component: {fileID: 3811986020810856752}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Word
   m_TagString: Untagged
   m_Icon: {fileID: 0}

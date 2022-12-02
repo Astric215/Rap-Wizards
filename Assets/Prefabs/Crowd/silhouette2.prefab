@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9003461940774501029}
   - component: {fileID: 9003461940774501030}
   - component: {fileID: 9003461940774501031}
+  - component: {fileID: -4148806407172825543}
   m_Layer: 0
   m_Name: silhouette2
   m_TagString: Untagged
@@ -105,3 +106,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4148806407172825543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003461940774501024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5695431cdac328c4dbf3c743b5ca9210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 9003461940774501031}
