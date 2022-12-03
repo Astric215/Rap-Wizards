@@ -20,3 +20,5 @@ MonoBehaviour:
   weakness: 1
   deck:
   - {fileID: 11400000, guid: ea9bc38338c0c394a88c9900c4745fa7, type: 2}
+  - {fileID: 11400000, guid: ea9bc38338c0c394a88c9900c4745fa7, type: 2}
+  - {fileID: 11400000, guid: ea9bc38338c0c394a88c9900c4745fa7, type: 2}
