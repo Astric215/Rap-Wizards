@@ -17,7 +17,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 8f311c6ff7b2bb245a43c2064bde3308, type: 3}
   speed: 2
   speedBonus: 0
-  dmgToStun: 50
+  dmgToStun: 5
   dmgTaken: 0
   weakness: 1
   deck:
