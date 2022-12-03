@@ -320,3 +320,10 @@ MonoBehaviour:
   clickedCard: {fileID: 0}
   clickedChar: {fileID: 0}
   turnTracker: {fileID: 0}
+  turnOrder:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

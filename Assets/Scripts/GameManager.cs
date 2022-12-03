@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject clickedChar = null;
     public GameObject turnTracker;
 
-    List<Character> turnOrder;
+    public List<GameObject> turnOrder;
 
     
     // Start is called before the first frame update
