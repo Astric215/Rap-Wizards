@@ -15,6 +15,7 @@ MonoBehaviour:
   charName: Shock Mage
   stunned: 0
   artwork: {fileID: 21300000, guid: fad910d170dd68643a5798f89c25da37, type: 3}
+  portrait: {fileID: 21300000, guid: 9a70c5e2e9ff4d24dbebd008aeaa7f6a, type: 3}
   speed: 2
   speedBonus: 0
   dmgToStun: 5

@@ -8,6 +8,7 @@ public class Character : ScriptableObject
     public string charName;
     public bool stunned;
     public Sprite artwork;
+    public Sprite portrait;
 
     public int speed;
     public int speedBonus;
