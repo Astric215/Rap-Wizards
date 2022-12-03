@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     }
     public void attack()
     {
+        //currently just deletes clicked card but since i also have a character clicked i can do math from there
         Debug.Log("deleting " + clickedCard.GetComponent<CardDisplay>().card.word);
         //delete card from hand
         hand.GetComponent<Hand>().cards.Remove(clickedCard);
