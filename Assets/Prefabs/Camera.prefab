@@ -319,3 +319,4 @@ MonoBehaviour:
   hand: {fileID: 0}
   clickedCard: {fileID: 0}
   clickedChar: {fileID: 0}
+  turnTracker: {fileID: 0}

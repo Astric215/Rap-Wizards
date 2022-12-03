@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject hand;
     public GameObject clickedCard = null;
     public GameObject clickedChar = null;
+    public GameObject turnTracker;
 
     List<Character> turnOrder;
 

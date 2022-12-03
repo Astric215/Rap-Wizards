@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 47821664}
   - component: {fileID: 47821663}
   m_Layer: 0
-  m_Name: Portrait
+  m_Name: Turn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 710049109}
   - component: {fileID: 710049108}
   m_Layer: 0
-  m_Name: Portrait (3)
+  m_Name: Turn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 877012864}
   - component: {fileID: 877012863}
   m_Layer: 0
-  m_Name: Portrait (2)
+  m_Name: Turn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 1200128883}
   - component: {fileID: 1200128882}
   m_Layer: 0
-  m_Name: Portrait (1)
+  m_Name: Turn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 1559444707}
   - component: {fileID: 1559444706}
   m_Layer: 0
-  m_Name: Portrait (4)
+  m_Name: Turn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
