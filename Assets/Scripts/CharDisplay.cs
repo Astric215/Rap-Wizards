@@ -16,6 +16,7 @@ public class CharDisplay : MonoBehaviour
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = character.artwork;
+        character = ScriptableObject.Instantiate(character);
     }
 
     void OnMouseDown() //Detects when you click the gameObject that contains this script

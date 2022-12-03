@@ -12,7 +12,11 @@ public class Hand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Draw("Singer");
+        Draw("Singer");
+        Draw("Singer");
+        Draw("Singer");
+        Draw("Singer");
     }
 
     // Update is called once per frame

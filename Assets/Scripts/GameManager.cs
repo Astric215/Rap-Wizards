@@ -39,18 +39,39 @@ public class GameManager : MonoBehaviour
     {
         //TODO: Fill the bar based on score var
         //TODO: Fill Turn order based on character speed
-        if (clickedCard != null)
+        if (clickedCard != null && clickedChar != null)
         {
             attack();
         }
     }
     public void attack()
     {
-        //currently just deletes clicked card but since i also have a character clicked i can do math from there
-        Debug.Log("deleting " + clickedCard.GetComponent<CardDisplay>().card.word);
-        //delete card from hand
-        hand.GetComponent<Hand>().cards.Remove(clickedCard);
-        Destroy(clickedCard);
+        Character chara = clickedChar.GetComponent<CharDisplay>().character;
+        Card card = clickedCard.GetComponent<CardDisplay>().card;
+        //check for heal, then weakness, then normal dmg
+        if(card.damageType == 3)
+        {
+            chara.dmgTaken -= card.damageLevel;
+        } else if (chara.weakness == card.damageType) {
+            chara.dmgTaken += card.damageLevel * 2;
+        } else {
+            chara.dmgTaken += card.damageLevel;
+        }
+        if (chara.dmgTaken >= chara.dmgToStun)
+        {
+            chara.stunned = true;
+        }
+
+        Debug.Log(chara.dmgTaken + " damage dealt");
+        deleteCard(clickedCard);
         clickedCard = null;
+        clickedChar = null;
+    }
+
+    private void deleteCard(GameObject card)
+    {
+        //delete card from hand
+        hand.GetComponent<Hand>().cards.Remove(card);
+        Destroy(card);
     }
 }
