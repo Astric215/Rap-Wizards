@@ -10,7 +10,9 @@ public class Character : ScriptableObject
     public Sprite artwork;
 
     public int speed;
+    public int speedBonus;
     public int dmgToStun;
+    public int dmgTaken;
     public int weakness;
 
     public List<Card> deck;
