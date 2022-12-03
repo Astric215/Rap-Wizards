@@ -16,7 +16,7 @@ MonoBehaviour:
   stunned: 0
   artwork: {fileID: 21300000, guid: e440c9d564d6f51459d2faddc5e89276, type: 3}
   portrait: {fileID: 21300000, guid: 49135733100840b4689fb6c658f3ca1e, type: 3}
-  speed: 2
+  speed: 5
   speedBonus: 0
   dmgToStun: 5
   dmgTaken: 0
