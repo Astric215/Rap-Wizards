@@ -316,3 +316,6 @@ MonoBehaviour:
   pointsToWin: 0
   enemyPoints: 0
   playerPoints: 0
+  hand: {fileID: 0}
+  clickedCard: {fileID: 0}
+  clickedChar: {fileID: 0}

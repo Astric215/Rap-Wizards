@@ -11,6 +11,8 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text wordText;
     public TMP_Text descriptionText;
 
+    bool isObjectClicked;
+
     private SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,20 @@ public class CardDisplay : MonoBehaviour
         wordText.text = card.word;
         descriptionText.text = card.text;  
     }
+    void OnMouseDown() //Detects when you click the gameObject that contains this script
+    {
+        isObjectClicked = true;
+        GameManager.Instance.clickedCard = gameObject;
+        Debug.Log("clicked card");
+    }
+
+    void OnMouseUp() //Detects when you stop clicking on the gameObject that contains this script
+    {
+        isObjectClicked = false;
+        //Your script here
+    }
+
+
 
     public void getSprite(Card card)
     {
