@@ -19,15 +19,16 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] int score = 0;
-    [SerializeField] int pointsToWin = 3;
-    [SerializeField] int enemyPoints = 0;
-    [SerializeField] int playerPoints = 0;
+    float pointsToWin = 3;
+    [SerializeField] float enemyPoints = 0;
+    [SerializeField] float playerPoints = 0;
     public GameObject hand;
     public GameObject clickedCard = null;
     public GameObject clickedChar = null;
     public GameObject turnTracker;
 
     public List<GameObject> turnOrder;
+    public List<GameObject> players;
 
     bool turnStart = true;
     // Start is called before the first frame update
@@ -53,6 +54,9 @@ public class GameManager : MonoBehaviour
         {
             attack();
         }
+        //update music
+        Debug.Log("player points " + (pointsToWin));
+        gameObject.GetComponent<MusicManager>().updateMusicParams((playerPoints - enemyPoints)/pointsToWin);
     }
     public void attack()
     {
@@ -72,6 +76,13 @@ public class GameManager : MonoBehaviour
             chara.stunned = true;
         }
 
+        if (!players.Contains(clickedChar))
+        {
+            playerPoints += 1;
+        } else
+        {
+            enemyPoints += 1;
+        }
         Debug.Log(chara.dmgTaken + " damage dealt");
         deleteCard(clickedCard);
         clickedCard = null;

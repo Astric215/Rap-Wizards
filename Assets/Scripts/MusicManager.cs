@@ -31,5 +31,6 @@ public class MusicManager : Singleton<MusicManager>
     public void updateMusicParams(float newScore)
     {
         musicInstance.setParameterByName("Score", newScore);
+        Debug.Log(newScore + " music score");
     }
 }

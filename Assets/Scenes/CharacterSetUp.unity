@@ -128,6 +128,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9061339974885513169, guid: 0cc26b2449acff6418cdb96c3230026e, type: 3}
   m_PrefabInstance: {fileID: 1461600578247844303}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &450607250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8041383672876577149, guid: 6735fb202d658a94e844f6ece29904b1, type: 3}
+  m_PrefabInstance: {fileID: 5960061776085112654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &450607253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450607250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f718e020cdb3d42bfa5fb8640eb174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music:
+    Guid:
+      Data1: 576615367
+      Data2: 1224296172
+      Data3: 198048641
+      Data4: -412010067
+    Path: event:/Music
 --- !u!1 &610568741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1004074681, guid: 89b5aac367a00bd4bba3a42b06054a8d, type: 3}
