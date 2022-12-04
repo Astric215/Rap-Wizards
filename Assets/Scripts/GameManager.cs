@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 
 public class GameManager : MonoBehaviour
@@ -84,7 +85,7 @@ public class GameManager : MonoBehaviour
             enemyAttack();
         }
         //update music
-        gameObject.GetComponent<MusicManager>().updateMusicParams((playerPoints - enemyPoints) / pointsToWin);
+        MusicManager.Instance.updateMusicParams((playerPoints - enemyPoints) / pointsToWin);
     }
     public void attack()
     {
@@ -152,7 +153,7 @@ public class GameManager : MonoBehaviour
 
     private void playSound()
     {
-        sound.PlayOneShot(clickedCard.GetComponent<CardDisplay>().clip);
+        FMODUnity.RuntimeManager.PlayOneShot(clickedCard.GetComponent<CardDisplay>().clip);
     }
 
     private void enemyAttack()
