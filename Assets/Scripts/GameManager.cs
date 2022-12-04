@@ -30,17 +30,19 @@ public class GameManager : MonoBehaviour
     public List<GameObject> turnOrder;
     public List<GameObject> players;
 
+    AudioSource sound;
     bool turnStart = true;
+    bool playerTurn;
     // Start is called before the first frame update
     void Start()
     {
-
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(turnStart)
+        if (turnStart)
         {
             //this long line just sorts the list in place by speed
             turnOrder.Sort((x, y) => (y.GetComponent<CharDisplay>().character.speed + y.GetComponent<CharDisplay>().character.speedBonus).CompareTo((x.GetComponent<CharDisplay>().character.speed + x.GetComponent<CharDisplay>().character.speedBonus)));
@@ -54,36 +56,70 @@ public class GameManager : MonoBehaviour
         {
             attack();
         }
+
+        if (players.Contains(turnOrder[0]))
+        {
+            var currChar = turnOrder[0].GetComponent<CharDisplay>().character;
+            if (currChar.stunned)
+            {
+                playerTurn = true;
+                //draw a card
+                if(hand.GetComponent<Hand>().cards.Count < 5)
+                {
+                    Debug.Log(hand.GetComponent<Hand>().cards.Count);
+                    hand.GetComponent<Hand>().Draw(currChar.charName);
+                } 
+            } 
+            else
+            {
+                Debug.Log(currChar.charName + " is stunned");
+                currChar.stunned = false;
+                nextTurn();
+            }
+            
+        } else
+        {
+            clickedCard = null;
+            clickedChar = null;
+            enemyAttack();
+        }
         //update music
-        Debug.Log("player points " + (pointsToWin));
-        gameObject.GetComponent<MusicManager>().updateMusicParams((playerPoints - enemyPoints)/pointsToWin);
+        gameObject.GetComponent<MusicManager>().updateMusicParams((playerPoints - enemyPoints) / pointsToWin);
     }
     public void attack()
     {
         Character chara = clickedChar.GetComponent<CharDisplay>().character;
         Card card = clickedCard.GetComponent<CardDisplay>().card;
         //check for heal, then weakness, then normal dmg
-        if(card.damageType == 3)
+        if (card.damageType == 3)
         {
             chara.dmgTaken -= card.damageLevel;
-        } else if (chara.weakness == card.damageType) {
+        }
+        else if (chara.weakness == card.damageType)
+        {
             chara.dmgTaken += card.damageLevel * 2;
-        } else {
+        }
+        else
+        {
             chara.dmgTaken += card.damageLevel;
         }
         if (chara.dmgTaken >= chara.dmgToStun)
         {
             chara.stunned = true;
+            chara.dmgTaken = 0;
         }
 
         if (!players.Contains(clickedChar))
         {
             playerPoints += 1;
-        } else
+        }
+        else
         {
             enemyPoints += 1;
         }
+
         Debug.Log(chara.dmgTaken + " damage dealt");
+        playSound();
         deleteCard(clickedCard);
         clickedCard = null;
         clickedChar = null;
@@ -105,12 +141,50 @@ public class GameManager : MonoBehaviour
         {
             child.GetComponent<Image>().sprite = turnOrder[i].GetComponent<CharDisplay>().character.portrait;
             i++;
-        } 
+        }
     }
 
     private void nextTurn()
     {
         turnOrder.Add(turnOrder[0]);
         turnOrder.Remove(turnOrder[0]);
+    }
+
+    private void playSound()
+    {
+        sound.PlayOneShot(clickedCard.GetComponent<CardDisplay>().clip);
+    }
+
+    private void enemyAttack()
+    {
+        var enemy = turnOrder[0].GetComponent<CharDisplay>();
+        if (!enemy.character.stunned)
+        {
+            var card = enemy.character.deck[Random.Range(0, enemy.character.deck.Count)];
+            var chara = players[Random.Range(0, players.Count)].GetComponent<CharDisplay>().character;
+            if (card.damageType == 3)
+            {
+                chara.dmgTaken -= card.damageLevel;
+            }
+            else if (chara.weakness == card.damageType)
+            {
+                chara.dmgTaken += card.damageLevel * 2;
+            }
+            else
+            {
+                chara.dmgTaken += card.damageLevel;
+            }
+            if (chara.dmgTaken >= chara.dmgToStun)
+            {
+                chara.stunned = true;
+                chara.dmgTaken = 0;
+            }
+            Debug.Log(chara.charName + " is hurt for" + chara.dmgTaken);
+        } else
+        {
+            Debug.Log(enemy.character.charName + " is stunned");
+            enemy.character.stunned = false;
+        }
+        nextTurn();
     }
 }

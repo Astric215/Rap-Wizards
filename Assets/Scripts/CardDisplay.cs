@@ -11,6 +11,7 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text wordText;
     public TMP_Text descriptionText;
 
+    public AudioClip clip;
     bool isObjectClicked;
 
     private SpriteRenderer sr;
@@ -19,13 +20,34 @@ public class CardDisplay : MonoBehaviour
     {
         getSprite(card);
         wordText.text = card.word;
-        descriptionText.text = card.text;  
+        descriptionText.text = card.text;
+
+        switch (card.damageType)
+        {
+            case 1:
+                clip = Resources.Load<AudioClip>("SFX/fire");
+                break;
+            case 2:
+                clip = Resources.Load<AudioClip>("SFX/ice");
+                break;
+            case 3:
+                clip = Resources.Load<AudioClip>("SFX/protect");
+                break;
+            case 4:
+                clip = Resources.Load<AudioClip>("SFX/electric");
+                break;
+            case 5:
+                clip = Resources.Load<AudioClip>("SFX/poison");
+                break;
+            default:
+                clip = Resources.Load<AudioClip>("SFX/fire");
+                break;
+        }
     }
     void OnMouseDown() //Detects when you click the gameObject that contains this script
     {
         isObjectClicked = true;
         GameManager.Instance.clickedCard = gameObject;
-        Debug.Log("clicked card");
     }
 
     void OnMouseUp() //Detects when you stop clicking on the gameObject that contains this script

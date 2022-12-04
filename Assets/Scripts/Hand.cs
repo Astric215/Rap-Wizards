@@ -16,7 +16,6 @@ public class Hand : MonoBehaviour
         Draw("Singer");
         Draw("Singer");
         Draw("Singer");
-        Draw("Singer");
     }
 
     // Update is called once per frame
