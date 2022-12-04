@@ -462,6 +462,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1674614275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4704300554062535398, guid: 89b5aac367a00bd4bba3a42b06054a8d, type: 3}
+  m_PrefabInstance: {fileID: 6317180895796291900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1966413960 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1966413960, guid: 89b5aac367a00bd4bba3a42b06054a8d, type: 3}
@@ -802,6 +807,10 @@ PrefabInstance:
       propertyPath: hand
       value: 
       objectReference: {fileID: 1966413960}
+    - target: {fileID: 8054173591794031721, guid: 6735fb202d658a94e844f6ece29904b1, type: 3}
+      propertyPath: roundBar
+      value: 
+      objectReference: {fileID: 1674614275}
     - target: {fileID: 8054173591794031721, guid: 6735fb202d658a94e844f6ece29904b1, type: 3}
       propertyPath: turnTracker
       value: 
