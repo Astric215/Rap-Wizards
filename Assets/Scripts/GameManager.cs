@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
         //update portraits on turn tracker
         Transform trackerTransform = turnTracker.transform;
         //update speeds
-        turnOrder.Sort((x, y) => (y.GetComponent<CharDisplay>().character.speed + y.GetComponent<CharDisplay>().character.speedBonus).CompareTo((x.GetComponent<CharDisplay>().character.speed + x.GetComponent<CharDisplay>().character.speedBonus)));
+        //turnOrder.Sort((x, y) => (y.GetComponent<CharDisplay>().character.speed + y.GetComponent<CharDisplay>().character.speedBonus).CompareTo((x.GetComponent<CharDisplay>().character.speed + x.GetComponent<CharDisplay>().character.speedBonus)));
         int i = 0;
         foreach (Transform child in trackerTransform)
         {
