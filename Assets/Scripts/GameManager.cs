@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject roundBar;
     public List<GameObject> turnOrder;
     public List<GameObject> players;
+    public List<GameObject> gems;
     private Slider pointsBar;
 
     AudioSource sound;
@@ -55,14 +56,14 @@ public class GameManager : MonoBehaviour
         }
         loadTurnTracker();
 
-        //TODO: Fill the bar based on score var
-        //TODO: Fill Turn order based on character speed
+        //if a character and card have been clicked attack
         if (clickedCard != null && clickedChar != null)
         {
             attack();
         }
 
-        if (!turnStart && players.Contains(turnOrder[0]))
+        //if it is the players turn
+        if (players.Contains(turnOrder[0]))
         {
             var currChar = turnOrder[0].GetComponent<CharDisplay>().character;
             Debug.Log(currChar.charName + "'s Turn");
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
             } 
             else
             {
+                //skip if stunned
                 Debug.Log(currChar.charName + " is stunned");
                 currChar.stunned = false;
                 nextTurn();
@@ -83,15 +85,34 @@ public class GameManager : MonoBehaviour
             
         } else
         {
+            //if enemies turn prevent attacks and get enemy to attack
             clickedCard = null;
             clickedChar = null;
             enemyAttack();
         }
-        //update music
+        
+        
+        //update music and score
         score = (dmgDealt) / 10;
         MusicManager.Instance.updateMusicParams(score);
         pointsBar.value = (score + 1) / 2;
-        Debug.Log(score);
+
+        //if the bar is full one way or another then grant a gem to the team that won
+        if ((dmgDealt <= -10) || (dmgDealt >= 10))
+        {
+            dmgDealt = 0;
+            if (-10 >= dmgDealt)
+            {
+                gems[0].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/UI/GemRed");
+                enemyPoints += 1;
+            } 
+            else
+            {
+                gems[0].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/UI/GemGreen");
+                playerPoints += 1;
+            }
+            gems.RemoveAt(0);
+        }
 
     }
     public void attack()
@@ -120,15 +141,7 @@ public class GameManager : MonoBehaviour
             chara.dmgTaken = 0;
         }
 
-        if (!players.Contains(clickedChar))
-        {
-            playerPoints += 1;
-        }
-        else
-        {
-            enemyPoints += 1;
-        }
-
+        //play sound and reset for next character's turn
         Debug.Log(chara.dmgTaken + " damage dealt to " + chara.charName);
         playSound();
         deleteCard(clickedCard);
@@ -146,7 +159,10 @@ public class GameManager : MonoBehaviour
 
     private void loadTurnTracker()
     {
+        //update portraits on turn tracker
         Transform trackerTransform = turnTracker.transform;
+        //update speeds
+        turnOrder.Sort((x, y) => (y.GetComponent<CharDisplay>().character.speed + y.GetComponent<CharDisplay>().character.speedBonus).CompareTo((x.GetComponent<CharDisplay>().character.speed + x.GetComponent<CharDisplay>().character.speedBonus)));
         int i = 0;
         foreach (Transform child in trackerTransform)
         {
@@ -157,6 +173,7 @@ public class GameManager : MonoBehaviour
 
     private void nextTurn()
     {
+        //advance the turn order
         turnOrder.Add(turnOrder[0]);
         turnOrder.Remove(turnOrder[0]);
     }
@@ -168,6 +185,7 @@ public class GameManager : MonoBehaviour
 
     private void enemyAttack()
     {
+        //same as player attack
         var enemy = turnOrder[0].GetComponent<CharDisplay>();
         Debug.Log(enemy.character.charName + "'s Turn");
         if (!enemy.character.stunned)
