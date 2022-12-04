@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMODUnity;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text wordText;
     public TMP_Text descriptionText;
 
-    public AudioClip clip;
+    public string clip;
     bool isObjectClicked;
 
     private SpriteRenderer sr;
@@ -25,22 +26,22 @@ public class CardDisplay : MonoBehaviour
         switch (card.damageType)
         {
             case 1:
-                clip = Resources.Load<AudioClip>("SFX/fire");
+                clip = "event:/SFX/Fire";
                 break;
             case 2:
-                clip = Resources.Load<AudioClip>("SFX/ice");
+                clip = "event:/SFX/Ice";
                 break;
             case 3:
-                clip = Resources.Load<AudioClip>("SFX/protect");
+                clip = "event:/SFX/Protect";
                 break;
             case 4:
-                clip = Resources.Load<AudioClip>("SFX/electric");
+                clip = "event:/SFX/Electric";
                 break;
             case 5:
-                clip = Resources.Load<AudioClip>("SFX/poison");
+                clip = "event:/SFX/Poison";
                 break;
             default:
-                clip = Resources.Load<AudioClip>("SFX/fire");
+                clip = "event:/SFX/Fire";
                 break;
         }
     }
