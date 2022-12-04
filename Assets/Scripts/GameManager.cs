@@ -60,13 +60,13 @@ public class GameManager : MonoBehaviour
         if (players.Contains(turnOrder[0]))
         {
             var currChar = turnOrder[0].GetComponent<CharDisplay>().character;
+            Debug.Log(currChar.charName + "'s Turn");
             if (currChar.stunned)
             {
                 playerTurn = true;
                 //draw a card
                 if(hand.GetComponent<Hand>().cards.Count < 5)
                 {
-                    Debug.Log(hand.GetComponent<Hand>().cards.Count);
                     hand.GetComponent<Hand>().Draw(currChar.charName);
                 } 
             } 
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             enemyPoints += 1;
         }
 
-        Debug.Log(chara.dmgTaken + " damage dealt");
+        Debug.Log(chara.dmgTaken + " damage dealt to " + chara.charName);
         playSound();
         deleteCard(clickedCard);
         clickedCard = null;
@@ -158,6 +158,7 @@ public class GameManager : MonoBehaviour
     private void enemyAttack()
     {
         var enemy = turnOrder[0].GetComponent<CharDisplay>();
+        Debug.Log(enemy.character.charName + "'s Turn");
         if (!enemy.character.stunned)
         {
             var card = enemy.character.deck[Random.Range(0, enemy.character.deck.Count)];
@@ -179,7 +180,6 @@ public class GameManager : MonoBehaviour
                 chara.stunned = true;
                 chara.dmgTaken = 0;
             }
-            Debug.Log(chara.charName + " is hurt for" + chara.dmgTaken);
         } else
         {
             Debug.Log(enemy.character.charName + " is stunned");

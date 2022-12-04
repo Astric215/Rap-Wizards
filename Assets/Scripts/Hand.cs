@@ -21,7 +21,6 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(cards.Count);
         float space = (rightPos.position.x - leftPos.position.x) / (cards.Count - 1);
         float curr_Space = leftPos.position.x;
         foreach (GameObject i in cards)
